@@ -2,6 +2,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/System/Thread.hpp>
+#include "Rasterizer.h"
 
 namespace Rasterizer
 {
@@ -15,7 +16,7 @@ namespace Rasterizer
 		Window& operator=(Window&& p_other) noexcept;
 		~Window() = default;
 
-		void RunWindow();
+		void Run();
 
 		const std::string& GetTitle() const;
 		sf::Uint32 GetStyle() const;
@@ -30,6 +31,7 @@ namespace Rasterizer
 		void CreateWindow();
 
 		sf::RenderWindow m_window;
+		Rasterizer m_rasterizer;
 		sf::Event m_event;
 		sf::Thread m_thread;
 		std::string m_title;

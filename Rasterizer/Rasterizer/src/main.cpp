@@ -119,7 +119,7 @@ int main()
 	delete[] pixelArray;*/
 
 	Rasterizer::Window window {800, 600, "Rasterizer"};
-	window.RunWindow();
+	window.Run();
 
 	return EXIT_SUCCESS;
 }

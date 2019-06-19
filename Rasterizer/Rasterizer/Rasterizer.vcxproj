@@ -187,9 +187,11 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDi
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Rasterizer\Rasterizer.cpp" />
     <ClCompile Include="src\Rasterizer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Rasterizer\Rasterizer.h" />
     <ClInclude Include="include\Rasterizer\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
