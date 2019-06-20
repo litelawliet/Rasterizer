@@ -4,7 +4,7 @@
 
 namespace Rasterizer::Resources
 {
-	class Mesh
+	class Mesh final
 	{
 	public:
 		Mesh(std::vector<Geometry::Vertex>&& p_vertices, std::vector<unsigned int>&& p_indices);

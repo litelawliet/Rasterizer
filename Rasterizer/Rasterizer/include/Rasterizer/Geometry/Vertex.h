@@ -4,7 +4,7 @@
 
 namespace Rasterizer::Geometry
 {
-	struct Vertex
+	struct Vertex final
 	{
 		glm::vec3 m_position;
 		glm::vec3 m_normals;

@@ -199,14 +199,20 @@ xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Rasterizer\LowRenderer\Camera.cpp" />
+    <ClCompile Include="src\Rasterizer\Managers\Scene.cpp" />
     <ClCompile Include="src\Rasterizer\Rasterizer.cpp" />
+    <ClCompile Include="src\Rasterizer\Resources\Entity.cpp" />
     <ClCompile Include="src\Rasterizer\Resources\Mesh.cpp" />
     <ClCompile Include="src\Rasterizer\Resources\Loaders\MeshLoader.cpp" />
     <ClCompile Include="src\Rasterizer\Resources\Model.cpp" />
     <ClCompile Include="src\Rasterizer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Rasterizer\LowRenderer\Camera.h" />
+    <ClInclude Include="include\Rasterizer\Managers\Scene.h" />
     <ClInclude Include="include\Rasterizer\Rasterizer.h" />
+    <ClInclude Include="include\Rasterizer\Resources\Entity.h" />
     <ClInclude Include="include\Rasterizer\Resources\Mesh.h" />
     <ClInclude Include="include\Rasterizer\Resources\Loaders\MeshLoader.h" />
     <ClInclude Include="include\Rasterizer\Resources\Model.h" />

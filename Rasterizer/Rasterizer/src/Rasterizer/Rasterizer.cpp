@@ -1,9 +1,8 @@
 #include "Rasterizer/Rasterizer.h"
-
 #include <SFML/Graphics/RenderTarget.hpp>
 
 Rasterizer::Rasterizer::Rasterizer(const unsigned p_width, const unsigned p_height)
-	: m_pixelArray{ nullptr }, m_width { p_width }, m_height { p_height }
+	: m_pixelArray{ nullptr }, m_scene{ *Managers::Scene::GetInstance() }, m_width{ p_width }, m_height{ p_height }
 {
 	m_pixelArray = new sf::Uint8[m_width * m_height * static_cast<unsigned int>(PixelFormat::RGBA)];
 	m_imageFromPixelArray.create(m_width, m_height, m_pixelArray);
@@ -17,16 +16,44 @@ Rasterizer::Rasterizer::~Rasterizer()
 	}
 }
 
+Rasterizer::Rasterizer& Rasterizer::Rasterizer::operator=(const Rasterizer& p_other)
+{
+	if (&p_other == this)
+		return *this;
+
+	m_pixelArray = p_other.m_pixelArray;
+	m_scene = p_other.m_scene;
+	m_imageFromPixelArray = p_other.m_imageFromPixelArray;
+	m_textureFromImage = p_other.m_textureFromImage;
+	m_spriteToRender = p_other.m_spriteToRender;
+	m_width = p_other.m_width;
+	m_height = p_other.m_height;
+
+	return *this;
+}
+
 void Rasterizer::Rasterizer::draw(sf::RenderTarget& p_target, sf::RenderStates p_states) const
 {
 	p_target.draw(m_spriteToRender, p_states);
 }
 
-void Rasterizer::Rasterizer::Update()
+void Rasterizer::Rasterizer::Update(const float p_dt)
 {
 	// TODO: Rasterization process
 	// Modify the image after looping over all triangles
-	for(unsigned int i = 0; i < m_width / 4; ++i)
+	// get all meshes :
+	auto & entities = m_scene.GetEntities();
+	for (const auto & entity : entities)
+	{
+		const auto & model = entity.GetModel();
+		const auto & transform = entity.GetTransform();
+
+		// Now iterate over each triangle of the model
+		// use the transform for each vertex of the model and color it make the rasterization process out of it
+	}
+
+	// White quad for debug purpose
+	for (unsigned int i = 0; i < m_width / 4; ++i)
 	{
 		for (unsigned int j = 0; j < m_height / 4; ++j)
 		{

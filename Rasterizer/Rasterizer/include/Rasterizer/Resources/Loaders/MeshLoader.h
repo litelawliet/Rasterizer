@@ -5,7 +5,7 @@
 
 namespace Rasterizer::Resources::Loaders
 {
-	class MeshLoader
+	class MeshLoader final
 	{
 	public:
 		MeshLoader() = delete;

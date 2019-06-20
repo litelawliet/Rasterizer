@@ -1,19 +1,21 @@
 #pragma once
 #include <memory>
 #include "Rasterizer/Resources/Mesh.h"
-#include <glm/gtc/matrix_transform.hpp>
 #include <string>
 
 namespace Rasterizer::Resources
 {
-	class Model
+	class Model final
 	{
 	public:
-		explicit Model(const std::string& p_modelPath);
+		explicit Model(std::string&& p_modelPath);
 		~Model() = default;
+
+		const std::shared_ptr<Mesh>& GetMesh() const noexcept;
+		const std::string& GetMeshFile() const noexcept;
 
 	private:
 		std::shared_ptr<Mesh> m_mesh;
-		glm::mat4x4 m_transform;
+		std::string m_meshFile;
 	};
 }

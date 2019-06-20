@@ -3,6 +3,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/System/Thread.hpp>
 #include "Rasterizer/Rasterizer.h"
+#include "LowRenderer/Camera.h"
 
 namespace Rasterizer
 {
@@ -36,6 +37,8 @@ namespace Rasterizer
 		sf::Thread m_thread;
 		std::string m_title;
 		sf::ContextSettings m_windowSettings;
+
+		LowRenderer::Camera& m_camera;
 
 		sf::Uint32 m_style;
 		unsigned int m_width;
