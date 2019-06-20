@@ -5,11 +5,11 @@ This is my implementation of the Rasterization using SFML 2.5.1, glm 0.9.9.5 and
 
 The exercise I engaged myself in is to reproduce the GPU rasterization process in the CPU.
 
-Goals :
- 	- Load any 3D models to rasterize into the scene. (Done)
- 	- Move in 3D the camera using both keyboard and mouse to navigate. (Done)
- 	- Rasterize all the 3D models. (In progress)
- 	- Use Blinn-Phong lighting on all 3D models in the scenes.
+Goals:
+   - Load any 3D models to rasterize into the scene. (Done)
+   - Move in 3D the camera using both keyboard and mouse to navigate. (Done)
+   - Rasterize all the 3D models. (In progress)
+   - Use Blinn-Phong lighting on all 3D models in the scenes.
 
 I am using an sf::Uint8 array furnished by SFML.
 Since my goal is to reproduce as close as possible all the process of the rasterization I managed all the pixels myself which includes the 4 bytes composing a pixel.
