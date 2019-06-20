@@ -17,4 +17,4 @@ Since my goal is to reproduce as close as possible all the process of the raster
 After processing the entire screen, I send the pixel array into an sf::Image, transform it into an sf::Texture to finally being sent into my very and only sf::Sprite which will be rendered by the SFML.
 This last part is handled by SFML itself, all the work is done with the pixel array who represents the very final image to render, all the rest with the sf::Image and all that stuff are to render the pixel array accordingly.
 
-That actually represents a sort of bottleneck (out of the rasterization process on the CPU) because I recreate an sf::Image every frame, which internally create his own pixel array based on mine.
+This way of rendering the pixel array represents a sort of bottleneck (out of the rasterization process on the CPU) because it recreates an sf::Image every frame, which internally create his own pixel array based on mine.
