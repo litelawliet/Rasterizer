@@ -91,8 +91,8 @@ Rasterizer::Resources::Mesh* Rasterizer::Resources::Loaders::MeshLoader::Load(co
 
 	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 	{
-		std::cerr << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
-		return nullptr;
+		std::cerr << "ERROR::ASSIMP::Importer::ReadFile(): " << importer.GetErrorString() << std::endl;
+		return new Mesh{ std::move(m_vertices), std::move(m_indices) };
 	}
 
 	//Iterate over the meshes

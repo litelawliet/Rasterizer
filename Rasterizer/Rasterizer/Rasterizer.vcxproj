@@ -116,7 +116,8 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-d-2.dll" "$(Ou
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"
+xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -138,7 +139,8 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-d-2.dll" "$(Ou
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"
+xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -164,7 +166,8 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-2.dll" "$(OutD
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"
+xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -190,7 +193,8 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-2.dll" "$(OutD
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"
+xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

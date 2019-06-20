@@ -11,11 +11,12 @@ namespace Rasterizer::Resources::Loaders
 		MeshLoader() = delete;
 		~MeshLoader() = delete;
 
-		static void ProcessMesh(aiMesh* p_mesh);
 		static Mesh* Load(const std::string& p_modelPath);
 		static bool Destroy(Mesh*& p_meshInstanceReference) noexcept;
 
 	private:
+		static void ProcessMesh(aiMesh* p_mesh);
+
 		static unsigned int m_offset;
 		static std::vector<Rasterizer::Geometry::Vertex> m_vertices;
 		static std::vector<unsigned int> m_indices;
