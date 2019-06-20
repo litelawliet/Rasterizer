@@ -2,7 +2,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/System/Thread.hpp>
-#include "Rasterizer.h"
+#include "Rasterizer/Rasterizer.h"
 
 namespace Rasterizer
 {

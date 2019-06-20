@@ -71,31 +71,31 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <IncludePath>$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\assimp\include\;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(SolutionDir)Dependencies\assimp\lib\$(Configuration)\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <IncludePath>$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\assimp\include\;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(SolutionDir)Dependencies\assimp\lib\$(Configuration)\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <IncludePath>$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\assimp\include\;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(SolutionDir)Dependencies\assimp\lib\$(Configuration)\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <IncludePath>$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\SFML\$(Platform)\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\assimp\include\;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\SFML\$(Platform)\lib;$(SolutionDir)Dependencies\assimp\lib\$(Configuration)\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,14 +107,16 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies);assimp-vc140-mt.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\openal32.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -127,14 +129,16 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(Out
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies);assimp-vc140-mt.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\openal32.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-graphics-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-d-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-d-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-d-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -151,14 +155,16 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-d-2.dll" "$(Out
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies);assimp-vc140-mt.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\openal32.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-graphics-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,23 +181,32 @@ copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDi
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies);assimp-vc140-mt.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\openal32.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-graphics-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-window-2.dll" "$(OutDir)"
 copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-system-2.dll" "$(OutDir)"
-copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-audio-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\SFML\$(Platform)\bin\sfml-network-2.dll" "$(OutDir)"
+copy "$(SolutionDir)Dependencies\assimp\bin\$(Configuration)\$(Platform)\assimp-vc140-mt.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Rasterizer\Rasterizer.cpp" />
+    <ClCompile Include="src\Rasterizer\Resources\Mesh.cpp" />
+    <ClCompile Include="src\Rasterizer\Resources\Loaders\MeshLoader.cpp" />
+    <ClCompile Include="src\Rasterizer\Resources\Model.cpp" />
     <ClCompile Include="src\Rasterizer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Rasterizer\Rasterizer.h" />
+    <ClInclude Include="include\Rasterizer\Resources\Mesh.h" />
+    <ClInclude Include="include\Rasterizer\Resources\Loaders\MeshLoader.h" />
+    <ClInclude Include="include\Rasterizer\Resources\Model.h" />
+    <ClInclude Include="include\Rasterizer\Geometry\Vertex.h" />
     <ClInclude Include="include\Rasterizer\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
