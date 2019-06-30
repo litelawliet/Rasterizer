@@ -29,6 +29,7 @@ namespace Rasterizer
 	private:
 		void SetPixelColor(const unsigned int p_x, const unsigned int p_y, const sf::Color& p_color) const;
 		void SetPixelColor(const unsigned int p_x, const unsigned int p_y, const sf::Uint8& p_red, const sf::Uint8& p_green, const sf::Uint8& p_blue, const sf::Uint8& p_alpha = 255) const;
+		float EdgeFunction(const Geometry::Vertex& p_first, const Geometry::Vertex& p_second, const Geometry::Vertex& p_third);
 
 		sf::Uint8* m_pixelArray;
 		Managers::Scene& m_scene;

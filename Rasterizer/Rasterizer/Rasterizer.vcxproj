@@ -217,6 +217,7 @@ xcopy "$(SolutionDir)rsc" "$(OutDir)..\rsc\" /E /Y</Command>
     <ClInclude Include="include\Rasterizer\Resources\Loaders\MeshLoader.h" />
     <ClInclude Include="include\Rasterizer\Resources\Model.h" />
     <ClInclude Include="include\Rasterizer\Geometry\Vertex.h" />
+    <ClInclude Include="include\Rasterizer\Utils\UtilsTemplatedFunctions.h" />
     <ClInclude Include="include\Rasterizer\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -80,6 +80,7 @@ void Rasterizer::Window::Render()
 {
 	m_window.setActive(true);
 
+	// TODO: Use mutex to increment the delta time
 	while (!m_shouldClose)
 	{
 		m_window.clear();
@@ -90,8 +91,6 @@ void Rasterizer::Window::Render()
 
 void Rasterizer::Window::HandleEvents()
 {
-	sf::Vector2i mousePosition;
-
 	while (m_window.pollEvent(m_event))
 	{
 		switch (m_event.type)
@@ -114,7 +113,7 @@ void Rasterizer::Window::HandleEvents()
 		default:;
 		}
 
-		mousePosition = sf::Mouse::getPosition();
+		sf::Vector2i mousePosition = sf::Mouse::getPosition();
 		m_camera.LookAround(1.0f, mousePosition);
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -152,6 +151,7 @@ void Rasterizer::Window::HandleEvents()
 	}
 
 	m_rasterizer.Update(1.0f);
+	// TODO: Use mutex to increment the delta time
 }
 
 void Rasterizer::Window::CreateWindow()

@@ -71,5 +71,8 @@
     <ClInclude Include="include\Rasterizer\Managers\Scene.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="include\Rasterizer\Utils\UtilsTemplatedFunctions.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

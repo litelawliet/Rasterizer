@@ -8,3 +8,13 @@ Rasterizer::Resources::Mesh::Mesh(std::vector<Geometry::Vertex>&& p_vertices, st
 Rasterizer::Resources::Mesh::~Mesh()
 {
 }
+
+const std::vector<Rasterizer::Geometry::Vertex>& Rasterizer::Resources::Mesh::GetVertices() const
+{
+	return m_vertices;
+}
+
+const std::vector<unsigned>& Rasterizer::Resources::Mesh::GetIndices() const
+{
+	return m_indices;
+}
